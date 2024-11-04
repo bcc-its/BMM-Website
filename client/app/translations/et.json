@@ -32,7 +32,7 @@
     "copyLink": "Kopeeri link",
     "remove": "Eemalda",
     "playPlaylist": "Esita esitlusloend",
-    "addToMyPlaylists": "Add to my playlists",
+    "addToMyPlaylists": "Lisa mu esitlusloendisse",
     "share": "Jaga"
   },
   "menu": {
@@ -88,7 +88,7 @@
       "album": "Album",
       "artist": "Esitaja",
       "interprets": "Esitajad",
-      "autoTranscribed": "Auto-transcribed"
+      "autoTranscribed": "Automaatselt transkribeeritud"
     }
   },
   "track": {
@@ -102,16 +102,16 @@
     "composer": "Helilooja",
     "album": "Album",
     "bibleVerse": "Piibli salm",
-    "songbooks": "Song number",
+    "songbooks": "Laulu number",
     "copyright": "Autoriõigused",
-    "publisher": "Publisher"
+    "publisher": "Väljaandja"
   },
   "playlist": {
     "tracks": "Muusikapala(d)",
     "albums": "Albumi(d)",
     "duration": "Kestus",
     "title": "Pealkiri",
-    "song": "Song",
+    "song": "Laul",
     "allLanguages": "Kõik keeled",
     "confirmPlaylistDeletion": "Kas soovite kindlasti selle esitlusloendi kustutada?",
     "latestTracks": "Hiljutised laulud",
@@ -135,16 +135,16 @@
     "showVideo": "Näita videot"
   },
   "appDownload": {
-    "title": "APK Download for Android",
-    "text": "We recommend to install the BMM app using the Google Play Store. If that is not possible, you can ",
-    "downloadLink": "directly download the APK."
+    "title": "APK allalaadimine Androidile",
+    "text": "Soovitame installida BMM-i rakenduse Google Play poe kaudu. Kui see pole võimalik, saate ",
+    "downloadLink": "APK otse alla laadida."
   },
   "copyright": "Autoriõigused",
   "downloadInfo": {
-    "title": "Download of messages unavailable\n",
-    "body": "The ability to download messages from BMM is no longer available. If you need a message for a specific use, please contact us and explain your needs.",
-    "playlistAddition": "The playlist will be downloaded without the messages.\n",
-    "albumAddition": "The album will be downloaded without the messages.\n",
+    "title": "Sõnumite allalaadimine pole saadaval\n",
+    "body": "Sõnumeid BMM-ist alla laadida pole enam võimalik. Kui vajad konkreetset sõnumit millekski, palun võta meiega ühendust ja selgita oma põhjust.",
+    "playlistAddition": "Esitusloend laetakse alla ilma sõnumiteta.\n",
+    "albumAddition": "Album laetakse alla ilma sõnumiteta.\n",
     "buttonContact": "Kontakt"
   }
 }
