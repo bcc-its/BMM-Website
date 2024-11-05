@@ -50,7 +50,10 @@ angular.module('bmmApp')
 
     if (oldEpisodesIndex < minOldEpisodes && episodes.length == maxEpisodes) {
       // In case all the episodes are unpublished episodes we load the next 30 episodes
+      var preserveIndex = $scope.episodeShowedIndex;
       init(offset);
+      if (preserveIndex !== 0)
+        $scope.episodeShowedIndex = preserveIndex;
     }
   };
 
@@ -192,8 +195,10 @@ angular.module('bmmApp')
       $scope.podcast = podcast;
 
       _api.podcastTracksGet($routeParams.id, {size: maxEpisodes, from: offset, unpublished: 'show'}).then(function(episodes) {
-        getNextEpisodesIds(episodes);
-        getEpisodeInformation();
+        if (episodes.length > 0) {
+          getNextEpisodesIds(episodes);
+          getEpisodeInformation();
+        }
       });
 
     }).fail(function() {
