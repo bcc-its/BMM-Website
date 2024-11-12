@@ -24,6 +24,7 @@
                 <th>{{init.translation.page.users.featurePreview}}</th>
                 <th>Fra Kåre Dashboard</th>
                 <th>{{init.translation.page.users.liveManager}}</th>
+                <th>Lyrics Manager</th>
                 <th>{{init.translation.page.users.allRights}}</th>
             </tr>
             <tr ng-repeat="user in searchResults">
@@ -62,6 +63,9 @@
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_LIVE_MANAGER" ng-change="updateUser(user, true)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_LYRICS_MANAGER" ng-change="updateUser(user, true)">
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_ADMINISTRATOR" ng-change="updateUser(user, true)">
@@ -103,6 +107,7 @@
                 <th>{{init.translation.page.users.featurePreview}}</th>
                 <th>Fra Kåre Dashboard</th>
                 <th>{{init.translation.page.users.liveManager}}</th>
+                <th>Lyrics Manager</th>
                 <th>{{init.translation.page.users.allRights}}</th>
             </tr>
             <tr ng-repeat="user in users">
@@ -144,6 +149,9 @@
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_LIVE_MANAGER" ng-change="updateUser(user)">
+                </td>
+                <td>
+                    <input type="checkbox" ng-model="user.perm.ROLE_LYRICS_MANAGER" ng-change="updateUser(user)">
                 </td>
                 <td>
                     <input type="checkbox" ng-model="user.perm.ROLE_ADMINISTRATOR" ng-change="updateUser(user)">
