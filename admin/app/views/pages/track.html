@@ -301,18 +301,23 @@
      ng-controller="RelationsCtrl"
      style="width: 100%;"></div>
 
-<div class="foldbox">
+<div class="foldbox" ng-if="model.subtype == 'song' || model.subtype == 'singsong'">
     <div class="header" ng-click="lyrics=!lyrics">
-      <h3>{{model.subtype == "song" || model.subtype == "singsong" ? init.translation.page.editor.lyrics : init.translation.page.editor.transcription}}</h3>
+      <h3>{{ init.translation.page.editor.lyrics }}</h3>
     </div>
     <div class="body" ng-class="{'visible': lyrics}">
-      <ul>
-        <li style="background: white; padding: 10px" ng-repeat="language in model.translations" ng-if="language.searchable_transcription && language.searchable_transcription.length > 0">
+      <ul ng-if="lyricsData.id && lyricsData.verses.length > 0">
+        <li style="background: white; padding: 10px">
 
-          <div ng-if="language.transcription_segments">
-            <div ng-repeat="segment in language.transcription_segments">{{segment.text}}</div>
+          <div>
+            <h4>{{lyricsData.song_title}}</h4>
+            <br/>
+            <div ng-repeat="verse in lyricsData.verses">
+              <div style="white-space: pre-wrap; opacity: 0.5">{{verse.title}}</div>
+              <div style="white-space: pre-wrap;">{{verse.text}}</div>
+              <br/>
+            </div>
           </div>
-          <div ng-if="!language.transcription_segments" style="white-space: pre-wrap;">{{language.searchable_transcription}}</div>
         </li>
       </ul>
     </div>

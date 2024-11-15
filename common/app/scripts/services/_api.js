@@ -1236,6 +1236,27 @@ angular.module('bmmLibApp')
     })
   };
 
+  factory.getLyrics = function(lyricsId) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + 'lyrics/'+lyricsId,
+    })
+  };
+
+  factory.lyricsSearch = function(term) {
+    return factory.addToQueue({
+      method: 'GET',
+      url: serverUrl + 'lyrics/search/'+term,
+    })
+  };
+
+  factory.replaceLyrics = function(trackId) {
+    return factory.addToQueue({
+      method: 'POST',
+      url: serverUrl + 'track/'+trackId+'/replaceLyrics/',
+    })
+  };
+
   return factory;
 
 });

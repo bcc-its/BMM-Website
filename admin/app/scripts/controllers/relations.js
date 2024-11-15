@@ -26,6 +26,7 @@ angular.module('bmmApp')
     $scope.toggleRecord = function() {
       $scope.recording = !$scope.recording;
     };
+    $scope.lyricsSearch = "";
     var clock = function() {
       $timeout(function() {
         if ($scope.recording) {
@@ -251,6 +252,36 @@ angular.module('bmmApp')
 
     };
 
+    $scope.lyrics = {
+      searchTerm: '',
+      searchResults: [],
+      selectedTitle: null
+    };
+
+    $scope.$watch('lyrics.searchTerm', function(term) {
+      console.log("watch triggered");
+      if (term!=='') {
+        _api.lyricsSearch(term).done(function(data) {
+          $scope.$apply(function() {
+            $scope.lyrics.searchResults = data;
+          });
+        });
+      } else {
+        $scope.lyrics.searchResults = [];
+      }
+    });
+
+    $scope.activateLyrics = function(lyrics) {
+      console.log("activate", $scope.$parent);
+      $scope.$parent.model.lyrics_id = lyrics.id;
+      $scope.lyrics.selectedTitle = lyrics.song_title;
+    };
+
+    $scope.deleteLyrics = function() {
+      $scope.$parent.model.lyrics_id = null;
+      $scope.lyrics.selectedTitle = null;
+    }
+
     $scope.addContributor = function(contributor) {
       $scope.createContributor(contributor).then(function(data) {
         $scope.$apply(function() {
@@ -421,18 +452,8 @@ angular.module('bmmApp')
             })
             .done(function(response){
               if (response.result.content) {
-                var newLyrics = '';
-                for (var property in response.result.content) {
-                  var content = response.result.content[property].content;
-                  for(var i = 0; i < content.length; i++){
-                    newLyrics += content[i]+'\n';
-                  }
-                  newLyrics += '\n';
-                }
                 $rootScope.songtreasures.lyricsStatus = 'available';
                 $rootScope.songtreasures.lyricsAvailable = true;
-                $rootScope.songtreasures.newLyrics = newLyrics;
-                console.log('new lyrics', $rootScope.songtreasures.newLyrics);
               }
               else {
                 $rootScope.songtreasures.lyricsStatus = 'not available';
@@ -515,12 +536,7 @@ angular.module('bmmApp')
               });
             }
             if ($rootScope.songtreasures.replaceLyrics && $rootScope.songtreasures.lyricsAvailable) {
-              $.each($scope.$parent.model.translations, function (index, item) {
-                if (item.language === model.original_language) {
-                  item.searchable_transcription = $rootScope.songtreasures.newLyrics;
-                  console.log('replaced lyrics', item.searchable_transcription);
-                }
-              });
+              $scope.$parent.replaceLyrics = true;
             }
 
             $rootScope.songtreasures.loading = true;

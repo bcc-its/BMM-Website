@@ -178,6 +178,29 @@
                 </button>
                 <div class="trash" style="float: right" ng-click="deleteReference($index,'songbooks')">x</div>
             </li>
+            <br/><br/>
+            <h4>Custom Lyrics</h4>
+            <li
+                ng-if="$parent.model.lyrics_id"
+                class="no-hover"
+                style="width: 100%; display: inline-block">
+                  <span>
+                      {{lyrics.selectedTitle ? lyrics.selectedTitle : $parent.lyricsData.song_title}}
+                  </span>
+              <div class="trash"
+                   style="float: right"
+                   ng-click="deleteLyrics()">x</div>
+            </li>
+            <li>
+              <input type="text" ng-model="lyrics.searchTerm" style="width: 100%">
+              <li ng-repeat="lyric in lyrics.searchResults"
+                  style="width: 100%; display: inline-block"
+                  ng-click="activateLyrics(lyric)">
+                    <span>
+                        {{lyric.song_title}}
+                    </span>
+              </li>
+            </li>
         </ul>
         <ul style="width: 50%; float: left; padding:.5em">
             <h4>{{init.translation.page.editor.available}}</h4>

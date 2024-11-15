@@ -33,6 +33,7 @@ angular.module('bmmApp')
       'exegesis',
       'video'
     ];
+    $scope.replaceLyrics = false;
 
     // We have these default values hardcoded for the website as well for a nice UX
     // When these have to be changed, API-PHP should be changed as well
@@ -102,8 +103,8 @@ angular.module('bmmApp')
           cover_upload: null,
           rel: [],
           analytics: false,
-          analyticsData: {
-          }
+          analyticsData: {},
+          lyricsData: {}
         };
         return;
       }
@@ -140,6 +141,7 @@ angular.module('bmmApp')
           $scope.$apply(function() {
             $scope.model = model;
             findAvailableTranslations();
+            $scope.getLyrics();
 
             _api.getTags().then(function(tags) {
               $scope.podcastTags = tags;
@@ -173,6 +175,17 @@ angular.module('bmmApp')
         .done(function(response) {
           $scope.model.analyticsData = response;
         });
+    };
+
+    $scope.getLyrics = function() {
+      if ($scope.model.lyrics_id) {
+        _api.getLyrics($scope.model.lyrics_id)
+          .done(function (response) {
+            $scope.lyricsData = response;
+          });
+      }
+      else
+        $scope.lyricsData = {};
     };
 
     $scope.getAnalytics();
@@ -269,12 +282,20 @@ angular.module('bmmApp')
         saveModel(); //After saving the model we redirect to the newly created track so there is no need to fetchModel
       } else {
         saveModel().done(function() {
+
+          if ($scope.replaceLyrics)
+            _api.replaceLyrics($scope.model.id);
+
           $scope.status = _init.translation.states.saveSucceedFetchingNewData;
           $scope.$apply();
           $scope.fetchModel().done(function(model) {
             getWaitings();
             $scope.$apply(function() { //Model-watcher updates status to changed
               $scope.model = model;
+
+              if ($scope.lyricsData.id !== $scope.model.lyrics_id) {
+                $scope.getLyrics();
+              }
               findAvailableTranslations();
               $timeout(function() { //Secure that watcher is fired
                 $scope.status = _init.translation.states.saved; //Update status
