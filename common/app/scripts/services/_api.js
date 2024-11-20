@@ -1208,10 +1208,9 @@ angular.module('bmmLibApp')
   };
 
   factory.songLyricsGet = function(songGuid, language){
-    var songtreasuresLanguage = language === "nb" ? "no" : language;
     return factory.addToQueue({
       method: 'GET',
-      url: serverUrl+'songtreasures/Songs/'+songGuid+'/Lyrics?language='+songtreasuresLanguage+'&format=json',
+      url: serverUrl+'songtreasures/Songs/'+songGuid+'/Lyrics?language='+language+'&format=json',
       beforeSend: function(xhr) {
         xhr.setRequestHeader("X-Api-Version", 3);
       }

@@ -446,7 +446,7 @@ angular.module('bmmApp')
 
           $rootScope.songtreasures.lyricsAvailable = false;
           $rootScope.songtreasures.lyricsStatus = 'loading';
-          _api.songLyricsGet(response.result.id, model.original_language)
+          _api.songLyricsGet(response.result.id, convertLanguageToSongtreasure(model.original_language))
             .fail(function(response){
               $rootScope.songtreasures.lyricsStatus = 'not available';
             })
