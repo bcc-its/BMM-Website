@@ -5,7 +5,7 @@
     "searchResultsFor": "Resultados de busca para:",
     "loading": "Carregando...",
     "waysOfTheLord": "Caminhos do senhor",
-    "almondBlossom": "Amendoeira em flor",
+    "almondBlossom": "Almond Blossom",
     "noTitle": "Sem título",
     "settings": "Configurações",
     "suport": "Suporte",
@@ -63,7 +63,7 @@
     "music": {
       "latestMusic": "Últimas músicas",
       "artists": "Artistas",
-      "fromKaare": "De Kåre",
+      "fromKaare": "Fra Kåre",
       "mp3Source": "Mp3-fonte",
       "childrensMp3Source": "MP3-fonte do childen",
       "instrumental": "Instrumental"
@@ -95,7 +95,7 @@
     "duration": "Duração",
     "details": "Detalhes",
     "exegesis": "Interpretação",
-    "recordedDate": "Data gravada",
+    "recordedDate": "Data de gravação",
     "artist": "Cantor",
     "lyricist": "Letrista",
     "arranger": "Arranjador",
@@ -111,7 +111,7 @@
     "albums": "Álbuns",
     "duration": "Duração",
     "title": "Título",
-    "song": "Cant",
+    "song": "Hino",
     "allLanguages": "Todas as línguas",
     "confirmPlaylistDeletion": "Tem certeza que deseja excluir esta playlist?",
     "latestTracks": "Últimas faixas",
@@ -119,13 +119,13 @@
     "by": "por"
   },
   "notify": {
-    "play": "Jogar",
+    "play": "Reproduzir",
     "next": "Próxima",
     "previous": "Anterior",
-    "shufflePlaylist": "Shuffle playlist",
-    "loopPlaylist": "Loop playlist",
-    "mute": "Sem som",
-    "maxVolume": "Volume Max",
+    "shufflePlaylist": "Reproduzir lista de reprodução aleatoriamente",
+    "loopPlaylist": "Repetir lista de reprodução",
+    "mute": "Mudo",
+    "maxVolume": "Volume máximo",
     "options": "Opções",
     "activateVideo": "Ativar o vídeo",
     "goToAlbum": "Ir ao álbum",
@@ -143,7 +143,7 @@
   "downloadInfo": {
     "title": "Download de falas indisponível",
     "body": "A capacidade de baixar falas do BMM não está mais disponível. Caso necessite de uma fala para um uso específico, entre em contato conosco e explique suas necessidades.",
-    "playlistAddition": "A lista de reprodução será baixada sem as falas.",
+    "playlistAddition": "A lista de reprodução será baixada sem as mensagens.\n",
     "albumAddition": "O álbum será baixado sem as mensagens.",
     "buttonContact": "Contato"
   }
