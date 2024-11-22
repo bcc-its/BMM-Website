@@ -140,7 +140,9 @@
     </div>
     <div class="body" ng-class="{'visible': language}">
         <ul style="width: 50%; float: left">
-            <h4>{{init.translation.page.editor.active}}</h4>
+            <h4>{{init.translation.page.editor.active}}
+              <button ng-click="publishAllLanguages()" style="font-size: 13px; margin-left: 10px;">Publish all</button>
+            </h4>
             <li ng-repeat="language in model.translations"
                 ng-class="{'original': language.language==model.original_language,
                            'unpublished': !language.is_visible}"

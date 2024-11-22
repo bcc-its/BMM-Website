@@ -389,6 +389,12 @@ angular.module('bmmApp')
       });
     };
 
+    $scope.publishAllLanguages = function() {
+      $.each($scope.model.translations, function() {
+        this.is_visible = true;
+      });
+    }
+
     $scope.switchLanguage = function(newLang, oldLang) {
       if (typeof oldLang!=='undefined') {
         $.each($scope.model.translations, function(index) {
