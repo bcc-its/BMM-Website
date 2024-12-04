@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bmmLibApp')
-  .factory('_api', function ($timeout, $rootScope, _api_queue, $analytics, ngOidcClient, $q) {
+  .factory('_api', function ($timeout, $rootScope, _api_queue, $analytics, ngOidcClient, $q, $location) {
 
   var factory = {},
       oidcUser = {},
@@ -661,9 +661,37 @@ angular.module('bmmLibApp')
 
   };
 
+
+  factory.loadNewlyCreatedUser =
+
   /** Get the users profile **/
   factory.loginUser = function() {
     var deferred = $q.defer();
+
+    var searchObject = $location.search();
+    if (searchObject.access_token) {
+      console.log("basic auth detected");
+
+      console.log("bypass login and use provided basic auth token");
+
+      oidcUser = {
+        access_token: searchObject.access_token,
+        profile: {
+          "https://members.bcc.no/app_metadata": {
+            person_id: 1
+          }
+        }
+      };
+
+      factory.sendXHR({
+        method: 'GET',
+        url: serverUrl+'currentUser'
+      }, false).then(function(apiUser) {
+        deferred.resolve(apiUser);
+      });
+      return deferred.promise;
+    }
+
 
     ngOidcClient.manager.events.addUserLoaded(function(user) {
       // Update user when silent renew is triggered
