@@ -235,6 +235,9 @@ angular.module('bmmLibApp')
   };
 
   factory.getAuthorizationHeader = function() {
+    if (oidcUser.basic_auth) {
+      return "Basic " + oidcUser.basic_auth;
+    }
     return "Bearer " + oidcUser.access_token;
   };
 
@@ -669,13 +672,12 @@ angular.module('bmmLibApp')
     var deferred = $q.defer();
 
     var searchObject = $location.search();
-    if (searchObject.access_token) {
+    if (searchObject.basic_auth) {
       console.log("basic auth detected");
-
       console.log("bypass login and use provided basic auth token");
 
       oidcUser = {
-        access_token: searchObject.access_token,
+        basic_auth: searchObject.basic_auth,
         profile: {
           "https://members.bcc.no/app_metadata": {
             person_id: 1
