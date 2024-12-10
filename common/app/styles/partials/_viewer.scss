@@ -125,3 +125,9 @@ header {
     margin-top: 0;
   }
 }
+
+.admin.hideMenu [ng-view] {
+  margin-top: 0;
+  margin-left: 0;
+  padding-bottom: 16px;
+}

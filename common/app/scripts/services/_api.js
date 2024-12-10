@@ -1286,6 +1286,13 @@ angular.module('bmmLibApp')
     })
   };
 
+  factory.podcastScreenshot = function(podcastId) {
+    return factory.addToQueue({
+      method: 'POST',
+      url: serverUrl + 'podcast/' + podcastId + '/screenshot/'
+    });
+  };
+
   return factory;
 
 });

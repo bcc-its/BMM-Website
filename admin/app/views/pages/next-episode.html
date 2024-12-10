@@ -9,6 +9,7 @@
             <span class="publishing" ng-if="!nextEpisode.published">Publishing at: </span>
             <span class="publishing" ng-if="nextEpisode.published">✔ Already published at: </span>
             {{nextEpisode.published_at | _locals:init.translation['iso-639-1']:'{d}. {SHORTMONTH} {yyyy} - {HH}:{mm}'}} (<a href="track/{{nextEpisode.id}}" ng-click="go('/track/'+nextEpisode.id);">link</a>)
+            <a href="#" ng-click="postScreenshot()">Post Screenshot</a>
         </h4>
         <div class="controls">
             <span class="disabled left" ng-if="episodeShowedIndex == 0">

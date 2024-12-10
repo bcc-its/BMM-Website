@@ -200,11 +200,14 @@ angular.module('bmmApp')
           getEpisodeInformation();
         }
       });
-
     }).fail(function() {
       doneLoading();
     });
   };
+
+  $scope.postScreenshot = function() {
+    _api.podcastScreenshot($routeParams.id);
+  }
 
   init(offset);
 });

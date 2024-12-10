@@ -386,3 +386,7 @@ screen and (max-height: $maxHeight) and (max-width: $mobileWidth) {
     margin-left: $navigationWidth;
   }
 }
+
+.hideMenu [navigator] {
+  visibility: hidden;
+}

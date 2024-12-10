@@ -180,6 +180,12 @@ angular.module('bmmLibApp')
             findBible([], 0, bibleLoaded);
           }
 
+          var searchObject = $location.search();
+          console.log("hide_menu",searchObject, searchObject.hide_menu);
+          if (searchObject.hide_menu) {
+            factory.hide_menu = true;
+          }
+
           $q.all(promises).then(function() {
             factory.load.complete.resolve();
             factory.load.loaded = true;

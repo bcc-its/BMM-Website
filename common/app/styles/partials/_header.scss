@@ -3,6 +3,10 @@
   z-index: 4;
 }
 
+.hideMenu header {
+  visibility: hidden;
+}
+
 header {
   @include transition(margin-top);
   position: absolute;
