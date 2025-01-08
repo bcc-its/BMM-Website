@@ -1,5 +1,5 @@
 {
-  "language": "Norsk",
+  "language": "Norwegian",
   "general": {
     "search": "Søk...",
     "loading": "Laster...",
@@ -9,9 +9,9 @@
     "main": {
       "dashboard": "Kontrollpanel",
       "notifications": "Meldinger",
-      "waitings": "På vent",
+      "waitings": "Venter på godkjenning",
       "contributors": "Bidragsytere",
-      "trackLists": "Track Lists",
+      "trackLists": "Sporlister",
       "podcasts": "Podcaster",
       "transmissions": "Live",
       "users": "Brukere",
@@ -41,7 +41,7 @@
       "lyricist": "Tekstforfatter",
       "composer": "Komponist",
       "contributor": "Bidragsyter",
-      "interprets": "Artist \/ taler"
+      "interprets": "Artist/taler"
     },
     "editor": {
       "mainSettings": "Hovedinnstillinger",
@@ -56,8 +56,8 @@
       "languages": "Språk",
       "tags": "Tags",
       "addTag": "Legg til tag",
-      "tracksInAllLanguages": "Show all tracks, independent of users language setting",
-      "generateTitlesByTag": "Generer titler med tag",
+      "tracksInAllLanguages": "Vis alle spor, uavhengig av brukerens språkinnstillinger",
+      "generateTitlesByTag": "Generer titler etter tag",
       "active": "Aktiv",
       "available": "Tilgjengelig",
       "title": "Tittel",
@@ -86,15 +86,15 @@
       "size": "Størrelse",
       "mediaFiles": "Mediefiler",
       "uploadFile": "Last opp fil",
-      "uploadError": "Kan ikke laste opp, kontroller at filen er i riktig format",
+      "uploadError": "Kunne ikke laste opp. Kontroller at filen er i riktig format",
       "imageAllowed": "jpeg, png, gif",
       "mediaAllowed": "mp3, mp4",
       "composers": "Komponister",
       "arrangers": "Arrangør",
-      "interprets": "Artister og\/eller talere",
+      "interprets": "Artister og/eller talere",
       "lyricists": "Tekstforfattere",
       "songbooks": "Sangbøker",
-      "trackLists": "Track Lists",
+      "trackLists": "Sporlister",
       "bibleReferences": "Bibelreferanser",
       "addBibleReference": "Legg til bibelreferanse",
       "externalReferences": "Eksterne referanser",
@@ -114,14 +114,14 @@
       "missingAlbum": "Mangler album",
       "wrongId": "Feil BMM-ID",
       "start": "Start",
-      "end": "End",
-      "loadSongMetadata": "load song metadata",
+      "end": "Slutt",
+      "loadSongMetadata": "laste inn metadata for sangen",
       "songMetadata": {
-        "replace": "replace metadata"
+        "replace": "erstatte metadata"
       },
-      "lyrics": "Lyrics",
-      "transcription": "Transcription",
-      "analytics": "Analytics"
+      "lyrics": "Sangtekst",
+      "transcription": "Transkripsjon",
+      "analytics": "Analyse"
     },
     "waitings": {
       "link": "Koble spor",
@@ -137,12 +137,12 @@
       "contributors": "Bidragsytere"
     },
     "transmissions": {
-      "save": "Lagre overføring",
-      "edit": "Rediger overføring",
+      "save": "Lagre sending",
+      "edit": "Rediger sending",
       "add": "Legg til sending",
-      "cancelEditing": "Cancel editing",
-      "upcomingMessage": "Upcoming BMM live transmissions",
-      "noUpcomingMessage": "No upcoming BMM live transmissions!"
+      "cancelEditing": "Avbryt redigering",
+      "upcomingMessage": "Kommende direktesendinger fra BMM",
+      "noUpcomingMessage": "Ingen kommende BMM direktesendinger!"
     },
     "users": {
       "adminUsers": "Administratorbrukere",
@@ -151,55 +151,55 @@
       "contributorManager": "Bidragsytere",
       "notificationManager": "Meldinger",
       "podcastManager": "Podcaster",
-      "featurePreview": "Feature Preview",
+      "featurePreview": "Forhåndsvisning av funksjonen",
       "liveManager": "Live",
       "allRights": "Alle rettigheter",
       "refreshList": "Oppdater listen"
     },
     "notifications": {
       "message": "Melding",
-      "addNotificationTranslation": "Legg til oversettelse",
+      "addNotificationTranslation": "Legg til oversettelse av varsel",
       "sendPushNotification": "Send push-varsel",
       "sent": "Sendt",
-      "failed": "Feilet",
-      "scheduledSendTime": "scheduled send time",
-      "link": "link"
+      "failed": "Mislyktes",
+      "scheduledSendTime": "planlagt sendetidspunkt",
+      "link": "lenke"
     },
     "podcast": {
       "title": "Podcaster",
-      "editTitle": "Edit Podcast",
-      "createNew": "Create new podcast",
-      "addTranslation": "Add podcast translation",
-      "save": "Save podcast"
+      "editTitle": "Redigere Podcast",
+      "createNew": "Opprett ny podcast",
+      "addTranslation": "Legg til podcast oversettelse",
+      "save": "Lagre podcast"
     },
     "playlist": {
       "title": "Spillelister",
-      "editTitle": "Edit Playlist",
-      "createNew": "Create new playlist",
-      "addTranslation": "Add playlist translation",
-      "save": "Save playlist"
+      "editTitle": "Rediger spilleliste",
+      "createNew": "Opprett ny spilleliste",
+      "addTranslation": "Legg til spillelisteoversettelse",
+      "save": "Lagre spilleliste"
     },
     "musicchannel": {
-      "title": "Music Channels",
-      "editTitle": "Edit Music Channel",
-      "createNew": "Create new music channel",
-      "addTranslation": "Add channel translation",
-      "save": "Save music channel"
+      "title": "Musikkanaler",
+      "editTitle": "Rediger musikkanal",
+      "createNew": "Opprett ny musikkanal",
+      "addTranslation": "Legg til kanaloversettelse",
+      "save": "Lagre musikkanal"
     }
   },
   "states": {
     "noChanges": "Ingen endringer",
-    "allIsWell": "Alt er vel",
+    "allIsWell": "Alt er i orden",
     "changesPerformed": "Endringer lagret",
     "couldNotCreateAlbum": "Kan ikke opprette album",
     "couldNotCreateTrack": "Kan ikke opprette spor",
     "errorCode": "Feilkode",
-    "attemptToSave": "Prøver å lagre, vennligst vent...",
-    "savingContributor": "Lagrer bidragsyter, vennligst vent...",
-    "savingChanges": "Lagrer endringer, vennligst vent...",
-    "saveSucceedFetchingNewData": "Lagring vellykket, henter nye data",
-    "couldNotFetchData": "Kunne ikke hente nye data, kontroller Internett-tilkoblingen",
-    "couldNotSave": "Kan ikke lagre, kontroller Internett-tilkoblingen",
+    "attemptToSave": "Prøver å lagre. Vennligst vent...",
+    "savingContributor": "Lagrer bidragsyter... Vennligst vent...",
+    "savingChanges": "Lagrer endringer. Vennligst vent...",
+    "saveSucceedFetchingNewData": "Lagring vellykket. Henter nye data",
+    "couldNotFetchData": "Kunne ikke hente nye data. Vennligst sjekk internettforbindelsen din",
+    "couldNotSave": "Kunne ikke lagre. Vennligst sjekk internettforbindelsen din",
     "saved": "Lagret",
     "loadingContributor": "Laster bidragsyter...",
     "loadingTracks": "Laster inn spor...",
@@ -211,12 +211,12 @@
     "deletingContributor": "Sletter bidragsyter, vennligst vent...",
     "trackDeleted": "Spor slettet",
     "notSet": "Ikke angitt",
-    "attemptToLinkTracks": "Prøver å koble spor i albumet, vennligst vent..."
+    "attemptToLinkTracks": "Forsøker å koble spor i album. Vennligst vent..."
   },
   "warnings": {
     "confirmAlbumDeletion": "Er du sikker på at du vil slette albumet med alle under-album og spor?",
-    "confirmTrackDeletion": "Er du sikker på at du vil slette spor med alt innholdet?",
-    "confirmTranslatedDeletion": "Språket har innhold. Bekreft sletting",
+    "confirmTrackDeletion": "Er du sikker på at du vil slette sporet med alt innholdet?",
+    "confirmTranslatedDeletion": "Språk har innhold. Bekreft sletting",
     "confirmContributorDeletion": "ER DU VIRKELIG SIKKER PÅ AT DU VIL SLETTE DENNE BIDRAGSYTEREN? ALLE KOBLEDE SPOR VIL BLI SLETTET!"
   },
   "track": {
