@@ -82,7 +82,7 @@ jobs:
       - build_javascript
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
 
       - name: dotnet build Release
         run: dotnet build --configuration Release
@@ -106,7 +106,7 @@ jobs:
     needs:
       - build_dotnet
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
       - uses: microsoft/variable-substitution@v1
         with:
           files: '/WebApp/*.json, /WebApp/wwwroot/scripts/*.config.json, /WebApp/wwwroot/admin/scripts/*.config.json'
@@ -130,7 +130,7 @@ jobs:
       serverUrlIndex: 0
       Api.BaseUrl: https://bmm-api.brunstad.org
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
       - uses: microsoft/variable-substitution@v1
         with:
           files: '/WebApp/*.json, /WebApp/wwwroot/scripts/*.config.json, /WebApp/wwwroot/admin/scripts/*.config.json'
