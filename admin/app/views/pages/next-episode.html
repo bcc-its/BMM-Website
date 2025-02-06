@@ -37,6 +37,7 @@
         <h5 ng-if="lyricistIsMissing"><span class="glyphicon glyphicon-remove"></span> No Lyricist has been set!</h5>
         <h5 ng-if="wrongTrackType"><span class="glyphicon glyphicon-remove"></span> The type of the track is not audiobook!</h5>
         <h5 ng-if="composerIsMissing"><span class="glyphicon glyphicon-remove"></span> No Composer has been set!</h5>
+        <h5 ng-if="songReferenceIsMissing"><span class="glyphicon glyphicon-remove"></span> The 'Hør sangen' link is missing!</h5>
         <div ng-if="missingLanguages">
             <h5 ng-repeat="language in missingLanguages"><span class="glyphicon glyphicon-remove"></span> <strong>{{language}}</strong> is missing but is a required language!</h5>
         </div>
@@ -64,8 +65,11 @@
                 <td>
                     <span ng-if="translation.big_difference_in_duration" title="The duration of the media is different with more than {{differenceToleranceSeconds}} seconds!" class="glyphicon glyphicon-exclamation-sign"></span> {{translation.media[0].files[0].duration | _time}}
                 </td>
-                <td>
+                <td ng-if="false">
                     <span ng-if="translation.duplicate_filesize" title="The filesize of the media is exactly the same as '{{translation.duplicate_filesize_language}}'!" class="glyphicon glyphicon-exclamation-sign"></span> {{translation.media[0].files[0].size}}
+                </td>
+                <td>
+                    <span ng-if="translation.suspicious_filesize" title="The filesize of the media is more than {{ 100 * differenceFilesizeTolerance }}% off from norwegian" class="glyphicon glyphicon-exclamation-sign"></span> {{translation.media[0].files[0].size}}
                 </td>
                 <td class="center">
                     <span ng-if="translation.media && translation.media.length >= 1" title="This language has a media file attached to it." class="glyphicon glyphicon-ok"></span>

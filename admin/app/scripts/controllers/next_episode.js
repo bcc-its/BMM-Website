@@ -9,6 +9,7 @@ angular.module('bmmApp')
   ) {
   $scope.init = _init;
   $scope.differenceToleranceSeconds = 10;
+  $scope.differenceFilesizeTolerance = 0.01;
 
   $scope.nextEpisodesIds = [];
   $scope.episodeShowedIndex = 0;
@@ -58,7 +59,7 @@ angular.module('bmmApp')
   };
 
   var orderLanguages = function() {
-    var languageOrdering = ['nb', 'en', 'de', 'nl', 'ro', 'hu', 'pl', 'fr', 'ru', 'es', 'fi', 'pt', 'tr', 'it', 'ta', 'sl'];
+    var languageOrdering = ['nb', 'en', 'de', 'nl', 'ro', 'hu', 'pl', 'fr', 'ru', 'es', 'fi', 'pt', 'ta', 'sl', 'et', 'tr', 'kha', 'ml', 'yue', 'it', 'hr'];
     var orderedLanguages = [];
 
     for (var i = 0; i < languageOrdering.length; i++) {
@@ -118,6 +119,23 @@ angular.module('bmmApp')
     }
   }
 
+  var detectSuspiciousFilesize = function() {
+    var originalLanguageSize = 0;
+    $scope.nextEpisode.translations.forEach(function(translation) {
+      if (translation.language == $scope.nextEpisode.original_language && translation.media != null && translation.media[0]) {
+        originalLanguageSize = translation.media[0].files[0].size;
+        return;
+      }
+    });
+
+    $scope.nextEpisode.translations.forEach(function(translation) {
+      if (translation.media != null && translation.media.length > 0)
+        if (Math.abs(translation.media[0].files[0].size - originalLanguageSize) >= originalLanguageSize * $scope.differenceFilesizeTolerance) {
+          translation.suspicious_filesize = true;
+        }
+    });
+  }
+
   var detectMissingLanguages = function(){
     var expectedLanguages = ['nb', 'en', 'de', 'nl', 'ro', 'hu', 'pl', 'fr', 'ru'];
     var availableLanguages = $scope.nextEpisode.translations.map(function(translation) { return translation.language; });
@@ -155,6 +173,7 @@ angular.module('bmmApp')
         detectDuplicateTitles();
         detectBigDifferenceInDuration();
         detectDuplicateFilesize();
+        detectSuspiciousFilesize();
         detectMissingLanguages();
 
         $scope.nextEpisode.published = new Date(nextEpisode.published_at) < datetime;
@@ -163,6 +182,7 @@ angular.module('bmmApp')
         $scope.songbookIsNotSet = true;
         $scope.lyricistIsMissing = true;
         $scope.composerIsMissing = true;
+        $scope.songReferenceIsMissing = true;
         $scope.noUpcomingEpisode = false;
         $scope.wrongTrackType = nextEpisode.subtype !== "audiobook";
         if ($scope.episodeShowedIndex === $scope.nextEpisodesIds.length - 1 && $scope.nextEpisode.published) {
@@ -175,10 +195,12 @@ angular.module('bmmApp')
             $scope.lyricistIsMissing = false;
           else if (item.type == "composer")
             $scope.composerIsMissing = false;
+          else if (item.type == "external" && item.url.startsWith("https://bmm.bcc.media/track/"))
+            $scope.songReferenceIsMissing = false;
         });
 
         $scope.errors = $scope.missingLanguages.length > 0 || $scope.norwegianNotMainLanguage || $scope.lyricistIsMissing
-          || $scope.composerIsMissing || $scope.noUpcomingEpisode || $scope.wrongTrackType;
+          || $scope.composerIsMissing || $scope.noUpcomingEpisode || $scope.wrongTrackType || $scope.songReferenceIsMissing;
 
       }).then(function(){
         doneLoading();
