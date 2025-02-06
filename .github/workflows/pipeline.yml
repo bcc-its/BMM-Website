@@ -70,10 +70,11 @@ jobs:
       - run: zip '${{ github.workspace }}/admin.zip' -r ./
         working-directory: ./admin/dist
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           path: ${{ github.workspace }}/**.zip
           name: dist
+          include-hidden-files: true
         if: (${{ job.status }} != 'cancelled')
   build_dotnet:
     runs-on: windows-latest
@@ -93,10 +94,11 @@ jobs:
       - name: unzip admin files
         run: unzip -o '${{ github.workspace }}/dist/admin.zip' -d '${{ github.workspace }}/output/wwwroot/admin'
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           path: ${{ github.workspace }}/output/
           name: WebApp
+          include-hidden-files: true
   deploy_int:
     if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main' 
     runs-on: windows-latest
