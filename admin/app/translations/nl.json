@@ -34,14 +34,14 @@
   "page": {
     "search": {
       "searchResults": "Zoekresultaten",
-      "content": "Content",
+      "content": "Inhoud",
       "bibleVerse": "Bijbelvers",
       "album": "Album",
       "artist": "Artiest",
       "lyricist": "Schrijver",
       "composer": "Componist",
       "contributor": "Bijdrager",
-      "interprets": "Artiesten"
+      "interprets": "Interpretaties"
     },
     "editor": {
       "mainSettings": "Hoofdinstellingen",
@@ -51,7 +51,7 @@
       "save": "Opslaan",
       "delete": "Verwijderen",
       "play": "Afspelen",
-      "download": "Download",
+      "download": "Downloaden",
       "status": "Status",
       "languages": "Talen",
       "tags": "Tags",
@@ -91,13 +91,13 @@
       "mediaAllowed": "mp3, mp4",
       "composers": "Componisten",
       "arrangers": "Arrangeurs",
-      "interprets": "Artiesten en\/of sprekers",
+      "interprets": "Artiesten en/of sprekers",
       "lyricists": "Tekstschrijvers",
       "songbooks": "Liederenboeken",
       "trackLists": "Tracklijsten",
       "bibleReferences": "Bijbel verwijzingen",
       "addBibleReference": "Bijbel verwijzing toevoegen",
-      "externalReferences": "Externe referenties",
+      "externalReferences": "Externe verwijzingen",
       "addExternalReference": "Externe referentie toevoegen",
       "record": "Opnemen",
       "pause": "Pauze",
@@ -113,11 +113,11 @@
       "missingTrack": "Ontbrekend nummer",
       "missingAlbum": "Ontbrekend album",
       "wrongId": "Verkeerde BMM-ID",
-      "start": "Begin",
-      "end": "Eind",
+      "start": "Start",
+      "end": "Einde",
       "loadSongMetadata": "Metadata lied laden",
       "songMetadata": {
-        "replace": "Vervang metadata"
+        "replace": "Metadata vervangen"
       },
       "lyrics": "Lyrics",
       "transcription": "Transcriptie",
@@ -174,7 +174,7 @@
     },
     "playlist": {
       "title": "Afspeellijsten",
-      "editTitle": "Aanpassen Playlist",
+      "editTitle": "Aanpassen afspeellijst",
       "createNew": "Nieuwe playlist maken",
       "addTranslation": "Voeg playlist vertaling toe",
       "save": "Playlist opslaan"
@@ -190,20 +190,20 @@
   "states": {
     "noChanges": "Geen wijzigingen",
     "allIsWell": "Alles is goed",
-    "changesPerformed": "Wijzigingen opgeslagen",
+    "changesPerformed": "De wijzigingen zijn opgeslagen",
     "couldNotCreateAlbum": "Kan geen album maken",
     "couldNotCreateTrack": "Kan geen nummer maken",
     "errorCode": "Foutcode",
-    "attemptToSave": "Proberen op te slaan, even geduld...",
-    "savingContributor": "Opslaan van medewerker, even geduld...",
-    "savingChanges": "Opslaan van wijzigingen, even geduld...",
-    "saveSucceedFetchingNewData": "Opslaan gelukt, nieuwe gegevens ophalen",
-    "couldNotFetchData": "Kon geen nieuwe gegevens ophalen, Controleer uw internetverbinding",
-    "couldNotSave": "Kan niet opslaan, Controleer uw internetverbinding",
+    "attemptToSave": "Proberen op te slaan. Even geduld...",
+    "savingContributor": "Laden bijdrager... Even geduld...",
+    "savingChanges": "Wijzigingen aan het opslaan Even geduld...",
+    "saveSucceedFetchingNewData": "Opslaan voltooid Laden nieuwe data",
+    "couldNotFetchData": "Kon geen nieuwe data laden Controleer uw internetverbinding",
+    "couldNotSave": "Kan niet opslaan. Controleer uw internetverbinding",
     "saved": "Opgeslagen",
     "loadingContributor": "Laden medewerker...",
     "loadingTracks": "Laden van nummers...",
-    "loadingUsers": "Gebruikers laden...",
+    "loadingUsers": "Laden van gebruikers...",
     "loadingFiles": "Bestanden laden, even geduld...",
     "filesLoaded": "Bestanden geladen",
     "waitingForSelection": "Wacht op selectie",
@@ -211,12 +211,12 @@
     "deletingContributor": "Verwijderen bijdrager, even geduld...",
     "trackDeleted": "Nummer verwijderd",
     "notSet": "Niet ingesteld",
-    "attemptToLinkTracks": "Probeert nummers te koppelen aan het album, even geduld a.u.b..."
+    "attemptToLinkTracks": "Probeert nummers te koppelen in het album. Even geduld..."
   },
   "warnings": {
     "confirmAlbumDeletion": "Weet je zeker dat je dit album met al haar sub albums en nummers wilt verwijderen?",
     "confirmTrackDeletion": "Weet je zeker dat je dit nummer met al haar inhoud wil verwijderen?",
-    "confirmTranslatedDeletion": "Taal heeft inhoud. Verwijderen bevestigen",
+    "confirmTranslatedDeletion": "Taal heeft inhoud Bevestig verwijdering",
     "confirmContributorDeletion": "WEET JE ZEKER DAT JE DEZE BIJDRAGER WILT VERWIJDEREN? ALLE TRACKS DIE HIERAAN GELINKT ZIJN WORDEN OOK VERWIJDERD!"
   },
   "track": {
