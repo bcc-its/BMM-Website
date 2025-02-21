@@ -19,7 +19,9 @@
            { "/": "/contributors" },
            { "/": "/featured" },
            { "/": "/year-in-review" },
-           { "/": "/romans-questions"}
+           { "/": "/romans-questions"},
+           { "/": "/achievement/*" },
+           { "/": "/hvhe-standings" }
          ]
        }
      ]
